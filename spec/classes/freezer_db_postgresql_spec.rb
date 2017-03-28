@@ -18,7 +18,7 @@ describe 'freezer::db::postgresql' do
 
       it { is_expected.to contain_postgresql__server__db('freezer').with(
         :user     => 'freezer',
-        :password => 'md5c530c33636c58ae83ca933f39319273e'
+        :password => 'md55e34e2e3dc142b2c2238132885361a42'
       )}
     end
   end
