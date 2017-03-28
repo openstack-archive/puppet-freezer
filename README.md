@@ -14,7 +14,7 @@ freezer
 Overview
 --------
 
-The freezer module is a part of [OpenStack](https://www.openstack.org), an effort by the OpenStack infrastructure team to provide continuous integration testing and code review for OpenStack and OpenStack community projects not part of the core software.  The module its self is used to flexibly configure and manage the FIXME service for OpenStack.
+The freezer module is a part of [OpenStack](https://www.openstack.org), an effort by the OpenStack infrastructure team to provide continuous integration testing and code review for OpenStack and OpenStack community projects not part of the core software.  The module its self is used to flexibly configure and manage the distributed backup restore and disaster recovery as a service platform for OpenStack.
 
 Module Description
 ------------------
@@ -26,7 +26,7 @@ Setup
 
 **What the freezer module affects**
 
-* [Freezer](https://wiki.openstack.org/wiki/Freezer), the FIXME service for OpenStack.
+* [Freezer](https://wiki.openstack.org/wiki/Freezer), the distributed backup restore and disaster recovery as a service platform for OpenStack.
 
 ### Installing freezer
 
