@@ -1,26 +1,34 @@
 #
-# Class to execute freezer-manage db_sync
+# Class to execute freezer-manage db sync
 #
 # == Parameters
 #
 # [*extra_params*]
 #   (optional) String of extra command line parameters to append
-#   to the freezer-dbsync command.
+#   to the freezer-manage db sync command. These will be inserted
+#   in the command line between 'freezer-manage' and 'db sync'.
 #   Defaults to undef
 #
 class freezer::db::sync(
   $extra_params  = undef,
 ) {
+
+  include ::freezer::deps
+  include ::freezer::params
+
   exec { 'freezer-db-sync':
-    command     => "freezer-manage db_sync ${extra_params}",
-    path        => [ '/bin', '/usr/bin', ],
+    command     => "freezer-manage ${extra_params} db sync",
+    path        => [ '/usr/local/bin/', '/usr/bin', ],
     user        => 'freezer',
     refreshonly => true,
     try_sleep   => 5,
     tries       => 10,
     logoutput   => on_failure,
-    subscribe   => [Package['freezer'], Freezer_config['database/connection']],
+    subscribe   => [
+      Anchor['freezer::install::end'],
+      Anchor['freezer::config::end'],
+      Anchor['freezer::dbsync::begin']
+    ],
+    notify      => Anchor['freezer::dbsync::end'],
   }
-
-  Exec['freezer-manage db_sync'] ~> Service<| title == 'freezer' |>
 }
