@@ -22,16 +22,16 @@ describe 'freezer::keystone::auth' do
         :roles   => ['admin']
       )}
 
-      it { is_expected.to contain_keystone_service('freezer::FIXME').with(
+      it { is_expected.to contain_keystone_service('freezer::backup').with(
         :ensure      => 'present',
-        :description => 'freezer FIXME Service'
+        :description => 'OpenStack distributed backup restore and disaster recovery as a service platform'
       ) }
 
-      it { is_expected.to contain_keystone_endpoint('RegionOne/freezer::FIXME').with(
+      it { is_expected.to contain_keystone_endpoint('RegionOne/freezer::backup').with(
         :ensure       => 'present',
-        :public_url   => 'http://127.0.0.1:FIXME',
-        :admin_url    => 'http://127.0.0.1:FIXME',
-        :internal_url => 'http://127.0.0.1:FIXME',
+        :public_url   => 'http://127.0.0.1:9090',
+        :admin_url    => 'http://127.0.0.1:9090',
+        :internal_url => 'http://127.0.0.1:9090',
       ) }
     end
 
@@ -43,7 +43,7 @@ describe 'freezer::keystone::auth' do
           :admin_url    => 'http://10.10.10.12:81', }
       end
 
-      it { is_expected.to contain_keystone_endpoint('RegionOne/freezer::FIXME').with(
+      it { is_expected.to contain_keystone_endpoint('RegionOne/freezer::backup').with(
         :ensure       => 'present',
         :public_url   => 'https://10.10.10.10:80',
         :internal_url => 'http://10.10.10.11:81',
@@ -59,8 +59,8 @@ describe 'freezer::keystone::auth' do
 
       it { is_expected.to contain_keystone_user('freezery') }
       it { is_expected.to contain_keystone_user_role('freezery@services') }
-      it { is_expected.to contain_keystone_service('freezer::FIXME') }
-      it { is_expected.to contain_keystone_endpoint('RegionOne/freezer::FIXME') }
+      it { is_expected.to contain_keystone_service('freezer::backup') }
+      it { is_expected.to contain_keystone_endpoint('RegionOne/freezer::backup') }
     end
 
     context 'when overriding service name' do
@@ -72,8 +72,8 @@ describe 'freezer::keystone::auth' do
 
       it { is_expected.to contain_keystone_user('freezer') }
       it { is_expected.to contain_keystone_user_role('freezer@services') }
-      it { is_expected.to contain_keystone_service('freezer_service::FIXME') }
-      it { is_expected.to contain_keystone_endpoint('RegionOne/freezer_service::FIXME') }
+      it { is_expected.to contain_keystone_service('freezer_service::backup') }
+      it { is_expected.to contain_keystone_endpoint('RegionOne/freezer_service::backup') }
     end
 
     context 'when disabling user configuration' do
@@ -87,9 +87,9 @@ describe 'freezer::keystone::auth' do
 
       it { is_expected.not_to contain_keystone_user('freezer') }
       it { is_expected.to contain_keystone_user_role('freezer@services') }
-      it { is_expected.to contain_keystone_service('freezer::FIXME').with(
+      it { is_expected.to contain_keystone_service('freezer::backup').with(
         :ensure      => 'present',
-        :description => 'freezer FIXME Service'
+        :description => 'OpenStack distributed backup restore and disaster recovery as a service platform'
       ) }
 
     end
@@ -106,9 +106,9 @@ describe 'freezer::keystone::auth' do
 
       it { is_expected.not_to contain_keystone_user('freezer') }
       it { is_expected.not_to contain_keystone_user_role('freezer@services') }
-      it { is_expected.to contain_keystone_service('freezer::FIXME').with(
+      it { is_expected.to contain_keystone_service('freezer::backup').with(
         :ensure      => 'present',
-        :description => 'freezer FIXME Service'
+        :description => 'OpenStack distributed backup restore and disaster recovery as a service platform'
       ) }
 
     end
