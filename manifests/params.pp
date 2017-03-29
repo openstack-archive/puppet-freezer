@@ -9,15 +9,16 @@ class freezer::params {
   $freezer_db_backend = 'elasticsearch'
   $db_sync_command    = 'freezer-manage db sync'
 
-# TODO: vnogin 
+# TODO: vnogin
 # Test Freezer API wsgi app in Apache
 # $freezer_wsgi_script_source = '/usr/bin/freezer-wsgi'
 
   case $::osfamily {
-# TODO: vnogin
-# Add RedHat params
-#    'RedHat': {
-#    }
+    'RedHat': {
+      $api_package_name            = 'freezer-api'
+      $scheduler_package_name      = 'freezer'
+      $freezer_web_ui_package_name = 'freezer-web-ui'
+    }
     'Debian': {
       $api_package_name            = 'freezer-api'
       $scheduler_package_name      = 'freezer'
