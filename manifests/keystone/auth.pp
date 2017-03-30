@@ -31,7 +31,7 @@
 #   Defaults to 'true'.
 #
 # [*service_type*]
-#   Type of service. Defaults to 'key-manager'.
+#   Type of service. Defaults to 'backup'.
 #
 # [*region*]
 #   Region for endpoint. Defaults to 'RegionOne'.
@@ -42,18 +42,18 @@
 #
 # [*service_description*]
 #   (optional) Description of the service.
-#   Default to 'freezer FIXME Service'
+#   Default to 'OpenStack distributed backup restore and disaster recovery as a service platform'
 #
 # [*public_url*]
-#   (optional) The endpoint's public url. (Defaults to 'http://127.0.0.1:FIXME')
+#   (optional) The endpoint's public url. (Defaults to 'http://127.0.0.1:9090')
 #   This url should *not* contain any trailing '/'.
 #
 # [*admin_url*]
-#   (optional) The endpoint's admin url. (Defaults to 'http://127.0.0.1:FIXME')
+#   (optional) The endpoint's admin url. (Defaults to 'http://127.0.0.1:9090')
 #   This url should *not* contain any trailing '/'.
 #
 # [*internal_url*]
-#   (optional) The endpoint's internal url. (Defaults to 'http://127.0.0.1:FIXME')
+#   (optional) The endpoint's internal url. (Defaults to 'http://127.0.0.1:9090')
 #
 class freezer::keystone::auth (
   $password,
@@ -65,12 +65,12 @@ class freezer::keystone::auth (
   $configure_user      = true,
   $configure_user_role = true,
   $service_name        = 'freezer',
-  $service_description = 'freezer FIXME Service',
-  $service_type        = 'FIXME',
+  $service_description = 'OpenStack distributed backup restore and disaster recovery as a service platform',
+  $service_type        = 'backup',
   $region              = 'RegionOne',
-  $public_url          = 'http://127.0.0.1:FIXME',
-  $admin_url           = 'http://127.0.0.1:FIXME',
-  $internal_url        = 'http://127.0.0.1:FIXME',
+  $public_url          = 'http://127.0.0.1:9090',
+  $admin_url           = 'http://127.0.0.1:9090',
+  $internal_url        = 'http://127.0.0.1:9090',
 ) {
 
   if $configure_user_role {
