@@ -6,11 +6,16 @@ describe 'freezer::db::sync' do
 
     it 'runs freezer-db-sync' do
       is_expected.to contain_exec('freezer-db-sync').with(
-        :command     => 'freezer-manage db_sync ',
-        :path        => [ '/bin', '/usr/bin', ],
+        :command     => 'freezer-manage  db sync',
+        :path        => [ '/usr/local/bin/', '/usr/bin', ],
         :refreshonly => 'true',
         :user        => 'freezer',
-        :logoutput   => 'on_failure'
+        :logoutput   => 'on_failure',
+        :subscribe   => ['Anchor[freezer::install::end]',
+                         'Anchor[freezer::config::end]',
+                         'Anchor[freezer::dbsync::begin]'],
+        :notify      => 'Anchor[freezer::dbsync::end]',
+
       )
     end
 
