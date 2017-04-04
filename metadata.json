@@ -1,6 +1,6 @@
 {
   "name": "openstack-freezer",
-  "version": "0.0.1",
+  "version": "1.0.0-dev",
   "author": "OpenStack Contributors",
   "summary": "Puppet module for OpenStack Freezer",
   "license": "Apache-2.0",
@@ -11,26 +11,54 @@
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian",
-      "operatingsystemrelease": ["8"]
+      "operatingsystemrelease": [
+        "8"
+      ]
     },
     {
       "operatingsystem": "Fedora",
-      "operatingsystemrelease": ["21","22"]
+      "operatingsystemrelease": [
+        "24"
+      ]
     },
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": ["7"]
+      "operatingsystemrelease": [
+        "7"
+      ]
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": ["14.04","16.04"]
+      "operatingsystemrelease": [
+        "16.04"
+      ]
     }
   ],
+  "description": "Installs and configures OpenStack Freezer (distributed backup restore and disaster recovery as a service platform).",
   "dependencies": [
-    { "name": "puppetlabs/inifile", "version_requirement": ">=1.0.0 <2.0.0" },
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.2.0 <5.0.0" },
-    { "name": "openstack/openstacklib", "version_requirement": ">=9.2.0 <10.0.0" },
-    { "name": "openstack/keystone", "version_requirement": ">=9.2.0 <10.0.0" },
-    { "name": "openstack/oslo", "version_requirement": ">=9.2.0 <10.0.0" }
+    {
+      "name": "puppetlabs/inifile",
+      "version_requirement": ">=1.0.0 <2.0.0"
+    },
+    {
+      "name": "openstack/keystone",
+      "version_requirement": ">=11.0.0 <12.0.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=4.0.0 <5.0.0"
+    },
+    {
+      "name": "openstack/openstacklib",
+      "version_requirement": ">=11.0.0 <12.0.0"
+    },
+    {
+      "name": "openstack/oslo",
+      "version_requirement": ">=11.0.0 <12.0.0"
+    },
+    {
+      "name": "puppetlabs/apache",
+      "version_requirement": ">=1.0.0 <2.0.0"
+    }
   ]
 }
