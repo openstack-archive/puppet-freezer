@@ -1,10 +1,14 @@
+pkg/
 Gemfile.lock
-spec/fixtures/modules/*
-spec/fixtures/manifests/site.pp
-*.swp
-pkg
 vendor/
-/openstack/
+spec/fixtures/
+.vagrant/
+.bundle/
+coverage/
+.idea/
+*.swp
+*.iml
+openstack/
 
 # Files created by releasenotes build
 releasenotes/build
