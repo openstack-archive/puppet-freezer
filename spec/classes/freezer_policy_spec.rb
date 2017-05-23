@@ -19,6 +19,9 @@ describe 'freezer::policy' do
         :key   => 'context_is_admin',
         :value => 'foo:bar'
       })
+      is_expected.to contain_oslo__policy('freezer_config').with(
+        :policy_file => '/etc/freezer/policy.json',
+      )
     end
   end
 
