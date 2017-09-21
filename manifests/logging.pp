@@ -113,6 +113,8 @@ class freezer::logging(
   $log_date_format               = $::os_service_default,
 ) {
 
+  include ::freezer::deps
+
   oslo::log { 'freezer_config':
     use_stderr                    => $use_stderr,
     use_syslog                    => $use_syslog,

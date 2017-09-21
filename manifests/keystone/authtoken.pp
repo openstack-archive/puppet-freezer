@@ -214,6 +214,8 @@ class freezer::keystone::authtoken(
   $token_cache_time               = $::os_service_default,
 ) {
 
+  include ::freezer::deps
+
   keystone::resource::authtoken { 'freezer_config':
     username                       => $username,
     password                       => $password,
