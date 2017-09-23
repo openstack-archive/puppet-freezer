@@ -40,6 +40,8 @@ class freezer::db::postgresql(
   $privileges = 'ALL',
 ) {
 
+  include ::freezer::deps
+
   Class['freezer::db::postgresql'] -> Service<| title == 'freezer' |>
 
   ::openstacklib::db::postgresql { 'freezer':

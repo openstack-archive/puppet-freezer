@@ -28,6 +28,8 @@ class freezer::policy (
   $policy_path = '/etc/freezer/policy.json',
 ) {
 
+  include ::freezer::deps
+
   validate_hash($policies)
 
   Openstacklib::Policy::Base {

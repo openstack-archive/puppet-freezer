@@ -53,6 +53,8 @@ class freezer::db::mysql(
   $allowed_hosts = undef
 ) {
 
+  include ::freezer::deps
+
   validate_string($password)
 
   ::openstacklib::db::mysql { 'freezer':
