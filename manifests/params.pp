@@ -8,6 +8,7 @@ class freezer::params {
   $client_package     = 'python-freezerclient'
   $freezer_db_backend = 'elasticsearch'
   $db_sync_command    = 'freezer-manage db sync'
+  $group              = 'freezer'
 
 # TODO: vnogin
 # Test Freezer API wsgi app in Apache

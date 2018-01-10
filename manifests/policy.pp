@@ -29,11 +29,14 @@ class freezer::policy (
 ) {
 
   include ::freezer::deps
+  include ::freezer::params
 
   validate_hash($policies)
 
   Openstacklib::Policy::Base {
-    file_path => $policy_path,
+    file_path  => $policy_path,
+    file_user  => 'root',
+    file_group => $::freezer::params::group,
   }
 
   create_resources('openstacklib::policy::base', $policies)
