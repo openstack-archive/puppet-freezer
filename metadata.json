@@ -1,64 +1,51 @@
 {
-  "name": "openstack-freezer",
-  "version": "1.0.0-dev",
-  "author": "OpenStack Contributors",
-  "summary": "Puppet module for OpenStack Freezer",
-  "license": "Apache-2.0",
-  "source": "git://github.com/openstack/puppet-freezer.git",
-  "project_page": "https://launchpad.net/puppet-freezer",
-  "issues_url": "https://bugs.launchpad.net/puppet-freezer",
-  "description": "Installs and configures OpenStack Freezer.",
-  "operatingsystem_support": [
-    {
-      "operatingsystem": "Debian",
-      "operatingsystemrelease": [
-        "8"
-      ]
-    },
-    {
-      "operatingsystem": "Fedora",
-      "operatingsystemrelease": [
-        "24"
-      ]
-    },
-    {
-      "operatingsystem": "RedHat",
-      "operatingsystemrelease": [
-        "7"
-      ]
-    },
-    {
-      "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [
-        "16.04"
-      ]
-    }
-  ],
-  "description": "Installs and configures OpenStack Freezer (distributed backup restore and disaster recovery as a service platform).",
-  "dependencies": [
-    {
-      "name": "puppetlabs/inifile",
-      "version_requirement": ">=1.0.0 <2.0.0"
-    },
-    {
-      "name": "openstack/keystone",
-      "version_requirement": ">=11.0.0 <12.0.0"
-    },
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">=4.0.0 <5.0.0"
-    },
-    {
-      "name": "openstack/openstacklib",
-      "version_requirement": ">=11.0.0 <12.0.0"
-    },
-    {
-      "name": "openstack/oslo",
-      "version_requirement": ">=11.0.0 <12.0.0"
-    },
-    {
-      "name": "puppetlabs/apache",
-      "version_requirement": ">=1.0.0 <2.0.0"
-    }
-  ]
+    "name": "openstack-freezer",
+    "version": "1.0.0",
+    "author": "OpenStack Contributors",
+    "summary": "Puppet module for OpenStack Freezer",
+    "license": "Apache-2.0",
+    "source": "git://github.com/openstack/puppet-freezer.git",
+    "project_page": "https://launchpad.net/puppet-freezer",
+    "issues_url": "https://bugs.launchpad.net/puppet-freezer",
+    "description": "Installs and configures OpenStack Freezer (distributed backup restore and disaster recovery as a service platform).",
+    "operatingsystem_support": [
+        {
+            "operatingsystem": "RedHat",
+            "operatingsystemrelease": [
+                "7"
+            ]
+        },
+        {
+            "operatingsystem": "Ubuntu",
+            "operatingsystemrelease": [
+                "16.04"
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "name": "puppetlabs/inifile",
+            "version_requirement": ">=1.0.0 <2.0.0"
+        },
+        {
+            "name": "openstack/keystone",
+            "version_requirement": ">=12.3.0 <13.0.0"
+        },
+        {
+            "name": "puppetlabs/stdlib",
+            "version_requirement": ">=4.0.0 <5.0.0"
+        },
+        {
+            "name": "openstack/openstacklib",
+            "version_requirement": ">=12.3.0 <13.0.0"
+        },
+        {
+            "name": "openstack/oslo",
+            "version_requirement": ">=12.3.0 <13.0.0"
+        },
+        {
+            "name": "puppetlabs/apache",
+            "version_requirement": ">=1.0.0 <2.0.0"
+        }
+    ]
 }
