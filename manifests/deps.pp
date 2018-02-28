@@ -10,7 +10,7 @@ class freezer::deps {
   # replacement depend on the appropriate anchors.  When applicable, end tags
   # should be notified so that subscribers can determine if installation,
   # config or service state changed and act on that if needed.
-  anchor { 'frezer::install::begin': }
+  anchor { 'freezer::install::begin': }
   -> Package<| tag == 'freezer-package'|>
   ~> anchor { 'freezer::install::end': }
   -> anchor { 'freezer::config::begin': }
