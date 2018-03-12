@@ -30,5 +30,6 @@ class freezer::db::sync(
       Anchor['freezer::dbsync::begin']
     ],
     notify      => Anchor['freezer::dbsync::end'],
+    tag         => 'openstack-db',
   }
 }

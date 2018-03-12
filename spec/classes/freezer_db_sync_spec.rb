@@ -15,6 +15,7 @@ describe 'freezer::db::sync' do
                          'Anchor[freezer::config::end]',
                          'Anchor[freezer::dbsync::begin]'],
         :notify      => 'Anchor[freezer::dbsync::end]',
+        :tag         => 'openstack-db',
 
       )
     end
