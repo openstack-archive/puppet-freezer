@@ -9,6 +9,8 @@ describe 'freezer::db::sync' do
         :command     => 'freezer-manage  db sync',
         :path        => [ '/usr/local/bin/', '/usr/bin', ],
         :refreshonly => 'true',
+        :try_sleep   => 5,
+        :tries       => 10,
         :user        => 'freezer',
         :logoutput   => 'on_failure',
         :subscribe   => ['Anchor[freezer::install::end]',
