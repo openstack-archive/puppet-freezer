@@ -14,7 +14,6 @@ class freezer::db::sync(
 ) {
 
   include ::freezer::deps
-  include ::freezer::params
 
   exec { 'freezer-db-sync':
     command     => "freezer-manage ${extra_params} db sync",
