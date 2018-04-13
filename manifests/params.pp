@@ -3,9 +3,15 @@
 class freezer::params {
   include ::openstacklib::defaults
 
+  if ($::os_package_type == 'debian') {
+    $pyvers = '3'
+  } else {
+    $pyvers = ''
+  }
+
   $api_deploy_method  = 'apache'
   $api_bind_port      = '9090'
-  $client_package     = 'python-freezerclient'
+  $client_package     = "python${pyvers}-freezerclient"
   $freezer_db_backend = 'elasticsearch'
   $db_sync_command    = 'freezer-manage db sync'
   $group              = 'freezer'
