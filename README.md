@@ -86,3 +86,10 @@ Contributors
 ------------
 
 * https://github.com/openstack/puppet-freezer/graphs/contributors
+
+Repository
+-------------
+
+* https://git.openstack.org/cgit/openstack/puppet-freezer
+
+
