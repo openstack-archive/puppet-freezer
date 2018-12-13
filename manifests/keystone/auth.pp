@@ -5,55 +5,65 @@
 # === Parameters
 #
 # [*password*]
-#   (required) Password for freezer user.
+#   (Required) Password for freezer user.
 #
 # [*ensure*]
-#   (optional) Ensure state of keystone service identity. Defaults to 'present'.
+#   (Optional) Ensure state of keystone service identity.
+#   Defaults to 'present'.
 #
 # [*auth_name*]
-#   Username for freezer service. Defaults to 'freezer'.
+#   (Optional) Username for freezer service.
+#   Defaults to 'freezer'.
 #
 # [*email*]
-#   Email for freezer user. Defaults to 'freezer@localhost'.
+#   (Optional) Email for freezer user.
+#   Defaults to 'freezer@localhost'.
 #
 # [*tenant*]
-#   Tenant for freezer user. Defaults to 'services'.
+#   (Optional) Tenant for freezer user.
+#   Defaults to 'services'.
 #
 # [*configure_endpoint*]
-#   Should freezer endpoint be configured? Defaults to 'true'.
+#   (Optional) Should freezer endpoint be configured?
+#   Defaults to true
 #
 # [*configure_user*]
 #   (Optional) Should the service user be configured?
-#   Defaults to 'true'.
+#   Defaults to true
 #
 # [*configure_user_role*]
 #   (Optional) Should the admin role be configured for the service user?
-#   Defaults to 'true'.
+#   Defaults to true
 #
 # [*service_type*]
-#   Type of service. Defaults to 'backup'.
+#   (Optional) Type of service.
+#   Defaults to 'backup'.
 #
 # [*region*]
-#   Region for endpoint. Defaults to 'RegionOne'.
+#   (Optional) Region for endpoint.
+#   Defaults to 'RegionOne'.
 #
 # [*service_name*]
-#   (optional) Name of the service.
+#   (Optional) Name of the service.
 #   Defaults to the value of 'freezer'.
 #
 # [*service_description*]
-#   (optional) Description of the service.
+#   (Optional) Description of the service.
 #   Default to 'OpenStack distributed backup restore and disaster recovery as a service platform'
 #
 # [*public_url*]
-#   (optional) The endpoint's public url. (Defaults to 'http://127.0.0.1:9090')
+#   (0ptional) The endpoint's public url.
 #   This url should *not* contain any trailing '/'.
+#   Defaults to 'http://127.0.0.1:9090'
 #
 # [*admin_url*]
-#   (optional) The endpoint's admin url. (Defaults to 'http://127.0.0.1:9090')
+#   (Optional) The endpoint's admin url.
 #   This url should *not* contain any trailing '/'.
+#   Defaults to 'http://127.0.0.1:9090'
 #
 # [*internal_url*]
-#   (optional) The endpoint's internal url. (Defaults to 'http://127.0.0.1:9090')
+#   (Optional) The endpoint's internal url.
+#   Defaults to 'http://127.0.0.1:9090'
 #
 class freezer::keystone::auth (
   $password,
