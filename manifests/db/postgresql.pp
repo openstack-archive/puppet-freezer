@@ -34,8 +34,6 @@ class freezer::db::postgresql(
 
   include ::freezer::deps
 
-  Class['freezer::db::postgresql'] -> Service<| title == 'freezer' |>
-
   ::openstacklib::db::postgresql { 'freezer':
     password_hash => postgresql_password($user, $password),
     dbname        => $dbname,
@@ -44,6 +42,8 @@ class freezer::db::postgresql(
     privileges    => $privileges,
   }
 
-  ::Openstacklib::Db::Postgresql['freezer'] ~> Exec<| title == 'freezer-manage db_sync' |>
+  Anchor['freezer::db::begin']
+  ~> Class['freezer::db::postgresql']
+  ~> Anchor['freezer::db::end']
 
 }

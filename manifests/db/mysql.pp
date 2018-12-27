@@ -57,5 +57,8 @@ class freezer::db::mysql(
     allowed_hosts => $allowed_hosts,
   }
 
-  ::Openstacklib::Db::Mysql['freezer'] ~> Exec<| title == 'freezer-manage db_sync' |>
+  Anchor['freezer::db::begin']
+  ~> Class['freezer::db::mysql']
+  ~> Anchor['freezer::db::end']
+
 }
