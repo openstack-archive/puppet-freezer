@@ -2,12 +2,7 @@
 #
 class freezer::params {
   include ::openstacklib::defaults
-
-  if ($::os_package_type == 'debian') {
-    $pyvers = '3'
-  } else {
-    $pyvers = ''
-  }
+  $pyvers = $::openstacklib::defaults::pyvers
 
   $api_deploy_method  = 'apache'
   $api_bind_port      = '9090'
