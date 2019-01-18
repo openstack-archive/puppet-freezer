@@ -3,6 +3,8 @@ require 'spec_helper'
 describe 'freezer::db' do
   shared_examples 'freezer::db' do
     context 'with default parameters' do
+      it { should contain_class('freezer::deps') }
+
       it { should contain_oslo__db('freezer_config').with(
         :db_max_retries => '<SERVICE DEFAULT>',
         :connection     => 'sqlite:////var/lib/freezer/freezer.sqlite',
@@ -30,6 +32,8 @@ describe 'freezer::db' do
           :database_pool_timeout   => '21',
         }
       end
+
+      it { should contain_class('freezer::deps') }
 
       it { should contain_oslo__db('freezer_config').with(
         :db_max_retries => '-1',
