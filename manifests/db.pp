@@ -54,6 +54,8 @@ class freezer::db (
   $database_pool_timeout   = $::os_service_default,
 ) {
 
+  include ::freezer::deps
+
   validate_re($database_connection,
     '^(sqlite|mysql(\+pymysql)?|postgresql):\/\/(\S+:\S+@\S+\/\S+)?')
 
