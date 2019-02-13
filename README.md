@@ -35,7 +35,7 @@ Setup
 
 **What the freezer module affects**
 
-* [Freezer](https://wiki.openstack.org/wiki/Freezer), the distributed backup restore and disaster recovery as a service platform for OpenStack.
+* [Freezer](https://docs.openstack.org/freezer/latest/), the distributed backup restore and disaster recovery as a service platform for OpenStack.
 
 ### Installing freezer
 
