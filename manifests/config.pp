@@ -34,8 +34,8 @@ class freezer::config (
 
   include ::freezer::deps
 
-  validate_hash($freezer_config)
-  validate_hash($api_paste_ini_config)
+  validate_legacy(Hash, 'validate_hash', $freezer_config)
+  validate_legacy(Hash, 'validate_hash', $api_paste_ini_config)
 
   create_resources('freezer_config', $freezer_config)
   create_resources('freezer_api_paste_ini', $api_paste_ini_config)
