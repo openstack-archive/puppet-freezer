@@ -95,6 +95,6 @@ Contributors
 Repository
 ----------
 
-* https://git.openstack.org/cgit/openstack/puppet-freezer
+* https://opendev.org/openstack/puppet-freezer
 
 
