@@ -27,7 +27,8 @@ class freezer::params {
       $freezer_web_ui_package_name = 'freezer-web-ui'
     }
     default: {
-      fail("Unsupported osfamily: ${::osfamily} operatingsystem")
+      fail("Unsupported osfamily: ${::osfamily} operatingsystem: ${::operatingsystem}, \
+module ${module_name} only support osfamily RedHat and Debian")
     }
 
   } # Case $::osfamily
