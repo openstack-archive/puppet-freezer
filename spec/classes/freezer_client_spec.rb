@@ -3,6 +3,7 @@ require 'spec_helper'
 describe 'freezer::client' do
 
   shared_examples 'freezer client' do
+    it { is_expected.to contain_class('freezer::deps') }
     it { is_expected.to contain_class('freezer::params') }
     it { is_expected.to contain_package('python-freezerclient').with(
         :name     => platform_params[:client_package_name],
