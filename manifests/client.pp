@@ -10,8 +10,8 @@ class freezer::client(
   $ensure = 'present'
 ) {
 
-  include ::freezer::deps
-  include ::freezer::params
+  include freezer::deps
+  include freezer::params
 
   package { 'python-freezerclient':
     ensure   => $ensure,

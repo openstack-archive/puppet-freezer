@@ -9,6 +9,6 @@
 #
 class freezer {
 
-  include ::freezer::params
+  include freezer::params
 
 }

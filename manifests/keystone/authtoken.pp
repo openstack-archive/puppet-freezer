@@ -202,7 +202,7 @@ class freezer::keystone::authtoken(
   $service_token_roles_required   = $::os_service_default,
 ) {
 
-  include ::freezer::deps
+  include freezer::deps
 
   keystone::resource::authtoken { 'freezer_config':
     username                       => $username,

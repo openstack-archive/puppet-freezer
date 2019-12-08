@@ -32,7 +32,7 @@ class freezer::config (
   $api_paste_ini_config  = {},
 ) {
 
-  include ::freezer::deps
+  include freezer::deps
 
   validate_legacy(Hash, 'validate_hash', $freezer_config)
   validate_legacy(Hash, 'validate_hash', $api_paste_ini_config)

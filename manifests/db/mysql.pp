@@ -43,7 +43,7 @@ class freezer::db::mysql(
   $allowed_hosts = undef
 ) {
 
-  include ::freezer::deps
+  include freezer::deps
 
   validate_legacy(String, 'validate_string', $password)
 

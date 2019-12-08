@@ -13,7 +13,7 @@ class freezer::db::sync(
   $extra_params  = undef,
 ) {
 
-  include ::freezer::deps
+  include freezer::deps
 
   exec { 'freezer-db-sync':
     command     => "freezer-manage ${extra_params} db sync",

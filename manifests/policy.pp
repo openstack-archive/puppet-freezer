@@ -28,8 +28,8 @@ class freezer::policy (
   $policy_path = '/etc/freezer/policy.json',
 ) {
 
-  include ::freezer::deps
-  include ::freezer::params
+  include freezer::deps
+  include freezer::params
 
   validate_legacy(Hash, 'validate_hash', $policies)
 

@@ -32,7 +32,7 @@ class freezer::db::postgresql(
   $privileges = 'ALL',
 ) {
 
-  include ::freezer::deps
+  include freezer::deps
 
   ::openstacklib::db::postgresql { 'freezer':
     password_hash => postgresql_password($user, $password),

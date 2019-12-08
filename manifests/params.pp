@@ -1,7 +1,7 @@
 # Parameters for puppet-freezer
 #
 class freezer::params {
-  include ::openstacklib::defaults
+  include openstacklib::defaults
   $pyvers = $::openstacklib::defaults::pyvers
 
   $api_deploy_method  = 'apache'
