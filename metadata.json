@@ -1,6 +1,6 @@
 {
     "name": "openstack-freezer",
-    "version": "5.2.1",
+    "version": "5.3.0",
     "author": "OpenStack Contributors",
     "summary": "Puppet module for OpenStack Freezer",
     "license": "Apache-2.0",
@@ -41,7 +41,7 @@
         },
         {
             "name": "openstack/keystone",
-            "version_requirement": ">=16.2.0 <17.0.0"
+            "version_requirement": ">=16.3.0 <17.0.0"
         },
         {
             "name": "puppetlabs/stdlib",
@@ -53,11 +53,11 @@
         },
         {
             "name": "openstack/openstacklib",
-            "version_requirement": ">=16.2.0 <17.0.0"
+            "version_requirement": ">=16.3.0 <17.0.0"
         },
         {
             "name": "openstack/oslo",
-            "version_requirement": ">=16.2.0 <17.0.0"
+            "version_requirement": ">=16.3.0 <17.0.0"
         },
         {
             "name": "puppetlabs/apache",
