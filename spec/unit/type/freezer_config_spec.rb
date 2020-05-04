@@ -52,13 +52,12 @@ describe 'Puppet::Type.type(:freezer_config)' do
 
   it 'should autorequire the package that install the file' do
     catalog = Puppet::Resource::Catalog.new
-    package = Puppet::Type.type(:package).new(:name => 'freezer')
-    catalog.add_resource package, @freezer_config
+    anchor = Puppet::Type.type(:anchor).new(:name => 'freezer::install::end')
+    catalog.add_resource anchor, @freezer_config
     dependency = @freezer_config.autorequire
     expect(dependency.size).to eq(1)
     expect(dependency[0].target).to eq(@freezer_config)
-    expect(dependency[0].source).to eq(package)
+    expect(dependency[0].source).to eq(anchor)
   end
-
 
 end

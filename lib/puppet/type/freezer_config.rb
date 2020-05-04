@@ -46,8 +46,8 @@ Puppet::Type.newtype(:freezer_config) do
     defaultto('<SERVICE DEFAULT>')
   end
 
-  autorequire(:package) do
-    'freezer'
+  autorequire(:anchor) do
+    ['freezer::install::end']
   end
 
 end
