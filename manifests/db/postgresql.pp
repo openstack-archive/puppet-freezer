@@ -35,11 +35,11 @@ class freezer::db::postgresql(
   include freezer::deps
 
   ::openstacklib::db::postgresql { 'freezer':
-    password_hash => postgresql_password($user, $password),
-    dbname        => $dbname,
-    user          => $user,
-    encoding      => $encoding,
-    privileges    => $privileges,
+    password   => $password,
+    dbname     => $dbname,
+    user       => $user,
+    encoding   => $encoding,
+    privileges => $privileges,
   }
 
   Anchor['freezer::db::begin']
