@@ -7,7 +7,7 @@ describe 'freezer::db::postgresql' do
   end
 
   let :required_params do
-    { :password => 'pw' }
+    { :password => 'freezerpass' }
   end
 
   shared_examples_for 'freezer-db-postgresql' do
@@ -16,9 +16,12 @@ describe 'freezer::db::postgresql' do
         required_params
       end
 
-      it { is_expected.to contain_postgresql__server__db('freezer').with(
-        :user     => 'freezer',
-        :password => 'md55e34e2e3dc142b2c2238132885361a42'
+      it { is_expected.to contain_openstacklib__db__postgresql('freezer').with(
+        :user       => 'freezer',
+        :password   => 'freezerpass',
+        :dbname     => 'freezer',
+        :encoding   => nil,
+        :privileges => 'ALL',
       )}
     end
   end

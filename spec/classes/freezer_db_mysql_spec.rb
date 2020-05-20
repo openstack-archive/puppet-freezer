@@ -7,7 +7,7 @@ describe 'freezer::db::mysql' do
   end
 
   let :required_params do
-    { :password => 'fooboozoo_default_password', }
+    { :password => 'freezerpass', }
   end
 
   shared_examples_for 'freezer-db-mysql' do
@@ -17,12 +17,12 @@ describe 'freezer::db::mysql' do
       end
 
       it { is_expected.to contain_openstacklib__db__mysql('freezer').with(
-        :user           => 'freezer',
-        :password_hash  => '*3DDF34A86854A312A8E2C65B506E21C91800D206',
-        :dbname         => 'freezer',
-        :host           => '127.0.0.1',
-        :charset        => 'utf8',
-        :collate        => 'utf8_general_ci',
+        :user          => 'freezer',
+        :password      => 'freezerpass',
+        :dbname        => 'freezer',
+        :host          => '127.0.0.1',
+        :charset       => 'utf8',
+        :collate       => 'utf8_general_ci',
       )}
     end
 
@@ -32,13 +32,13 @@ describe 'freezer::db::mysql' do
       end
 
       it { is_expected.to contain_openstacklib__db__mysql('freezer').with(
-        :user           => 'freezer',
-        :password_hash  => '*3DDF34A86854A312A8E2C65B506E21C91800D206',
-        :dbname         => 'freezer',
-        :host           => '127.0.0.1',
-        :charset        => 'utf8',
-        :collate        => 'utf8_general_ci',
-        :allowed_hosts  => ['127.0.0.1','%']
+        :user          => 'freezer',
+        :password      => 'freezerpass',
+        :dbname        => 'freezer',
+        :host          => '127.0.0.1',
+        :charset       => 'utf8',
+        :collate       => 'utf8_general_ci',
+        :allowed_hosts => ['127.0.0.1','%']
       )}
     end
 
@@ -48,13 +48,13 @@ describe 'freezer::db::mysql' do
       end
 
       it { is_expected.to contain_openstacklib__db__mysql('freezer').with(
-        :user           => 'freezer',
-        :password_hash  => '*3DDF34A86854A312A8E2C65B506E21C91800D206',
-        :dbname         => 'freezer',
-        :host           => '127.0.0.1',
-        :charset        => 'utf8',
-        :collate        => 'utf8_general_ci',
-        :allowed_hosts  => '192.168.1.1'
+        :user          => 'freezer',
+        :password      => 'freezerpass',
+        :dbname        => 'freezer',
+        :host          => '127.0.0.1',
+        :charset       => 'utf8',
+        :collate       => 'utf8_general_ci',
+        :allowed_hosts => '192.168.1.1'
       )}
     end
   end
