@@ -16,6 +16,8 @@ describe 'freezer::db::mysql' do
         required_params
       end
 
+      it { is_expected.to contain_class('freezer::deps') }
+
       it { is_expected.to contain_openstacklib__db__mysql('freezer').with(
         :user          => 'freezer',
         :password      => 'freezerpass',
