@@ -4,6 +4,8 @@ describe 'freezer::db::sync' do
 
   shared_examples_for 'freezer-dbsync' do
 
+    it { is_expected.to contain_class('freezer::deps') }
+
     it 'runs freezer-db-sync' do
       is_expected.to contain_exec('freezer-db-sync').with(
         :command     => 'freezer-manage  db sync',
