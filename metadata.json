@@ -4,7 +4,7 @@
     "author": "OpenStack Contributors",
     "summary": "Puppet module for OpenStack Freezer",
     "license": "Apache-2.0",
-    "source": "git://github.com/openstack/puppet-freezer.git",
+    "source": "https://opendev.org/openstack/puppet-freezer.git",
     "project_page": "https://launchpad.net/puppet-freezer",
     "issues_url": "https://bugs.launchpad.net/puppet-freezer",
     "description": "Installs and configures OpenStack Freezer (distributed backup restore and disaster recovery as a service platform).",
