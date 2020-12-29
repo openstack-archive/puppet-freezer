@@ -20,12 +20,12 @@
 #   Defaults to empty hash.
 #
 # [*policy_path*]
-#   (Optional) Path to the nova policy.json file
-#   Defaults to /etc/freezer/policy.json
+#   (Optional) Path to the nova policy.yaml file
+#   Defaults to /etc/freezer/policy.yaml
 #
 class freezer::policy (
   $policies    = {},
-  $policy_path = '/etc/freezer/policy.json',
+  $policy_path = '/etc/freezer/policy.yaml',
 ) {
 
   include freezer::deps
@@ -34,9 +34,10 @@ class freezer::policy (
   validate_legacy(Hash, 'validate_hash', $policies)
 
   Openstacklib::Policy::Base {
-    file_path  => $policy_path,
-    file_user  => 'root',
-    file_group => $::freezer::params::group,
+    file_path   => $policy_path,
+    file_user   => 'root',
+    file_group  => $::freezer::params::group,
+    file_format => 'yaml',
   }
 
   create_resources('openstacklib::policy::base', $policies)
