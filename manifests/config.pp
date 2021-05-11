@@ -17,10 +17,6 @@
 #     DEFAULT/bar:
 #       value: barValue
 #
-# [*freezer_config*]
-#   (optional) Allow configuration of freezer.conf configurations.
-#   Defaults to empty hash'{}'
-#
 # [*api_paste_ini_config*]
 #   (optional) Allow configuration of /etc/freezer/freezer-paste.ini configurations.
 #
