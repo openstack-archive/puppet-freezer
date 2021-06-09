@@ -2,11 +2,10 @@
 #
 class freezer::params {
   include openstacklib::defaults
-  $pyvers = $::openstacklib::defaults::pyvers
 
   $api_deploy_method  = 'apache'
   $api_bind_port      = '9090'
-  $client_package     = "python${pyvers}-freezerclient"
+  $client_package     = 'python3-freezerclient'
   $freezer_db_backend = 'elasticsearch'
   $db_sync_command    = 'freezer-manage db sync'
   $group              = 'freezer'

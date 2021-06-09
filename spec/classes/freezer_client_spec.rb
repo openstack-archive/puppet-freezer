@@ -27,15 +27,7 @@ describe 'freezer::client' do
         when 'Debian'
           { :client_package_name => 'python3-freezerclient' }
         when 'RedHat'
-          if facts[:operatingsystem] == 'Fedora'
-            { :client_package_name => 'python3-freezerclient' }
-          else
-            if facts[:operatingsystemmajrelease] > '7'
-              { :client_package_name => 'python3-freezerclient' }
-            else
-              { :client_package_name => 'python-freezerclient' }
-            end
-          end
+          { :client_package_name => 'python3-freezerclient' }
         end
       end
 
