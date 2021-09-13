@@ -1,5 +1,0 @@
----
-features:
-  - |
-    The new ``freezer::policy::enforce_new_defaults`` parameter has been
-    added.
